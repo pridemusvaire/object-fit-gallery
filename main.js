@@ -22,6 +22,14 @@ function retrieveImage(requestObj,imageNo) {
           thumbs[i].className = 'thumb darken';
         }
     }
+
+    thumbs[imageNo].onfocus = function() {
+      mainImg.setAttribute('src',objectURL);
+      mainImg.className = 'blowup';
+        for(i = 0; i < thumbs.length; i++) {
+          thumbs[i].className = 'thumb darken';
+        }
+    }
   }
 }
 
