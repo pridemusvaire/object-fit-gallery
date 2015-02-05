@@ -8,9 +8,8 @@ for(i = 1; i <= thumbs.length ; i++) {
 
 function retrieveImage(requestObj,imageNo) {
   var request = new XMLHttpRequest();
-  request.responseType = 'blob';
   request.open('GET', requestObj, true);
-  request.send();
+  request.responseType = 'blob';
 
   request.onload = function() {
     var objectURL = URL.createObjectURL(request.response);
@@ -31,6 +30,8 @@ function retrieveImage(requestObj,imageNo) {
         }
     }
   }
+
+  request.send();
 }
 
 mainImg.onclick = function() {
